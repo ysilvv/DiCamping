@@ -163,7 +163,6 @@ nav.active #navbar_lista .nav-links::before {
 
 
 
-
 .botao-header button {
     width: 180px;
     height: 45px;
@@ -297,16 +296,15 @@ nav.active #navbar_lista .nav-links::before {
 }
 
 #lista_equipamento ul {
-    display: inline-block; /* Torna as listas elementos inline */
-    width: 20%; /* Define a largura de cada lista */
-    margin-right: 10%; /* Margem direita entre as listas */
+    display: inline-block;
+    width: 20%; 
+    margin-right: 10%; 
     margin-top: 10px;
     margin-left: 20px;
 }
 
-/* Estilos para os itens da lista */
 #lista_equipamento ul li {
-    margin-bottom: 1px; /* Espaçamento entre os itens */
+    margin-bottom: 1px; 
 }
 
 .botao-equipamento {
@@ -338,6 +336,144 @@ nav.active #navbar_lista .nav-links::before {
     width: 70%;
     display: block;
 }
+
+
+
+/* TÉCNICAS */
+.container-tecnica {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-items: end;
+    padding: 5%;
+    gap: 20px;
+}
+
+
+.texto-tecnicas h1 {
+    margin-top: 40px;
+    font-size: 30px;
+    color:#ab0303;
+    display: flex;
+    font-weight: 800;
+    font-style: normal;
+}
+.texto-tecnicas h3 {
+    margin-top: 40px;
+    font-size: 20px;
+    color:#ab0303;
+    ;
+    display: flex;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.image-tecnica img {
+    width: 90%;
+    height: 40%;
+    object-fit: cover;
+}
+
+
+
+/* TIPOS DE CAMPINGS */ 
+.texto-camping h1 {
+    justify-content: center;
+    margin-top: 40px;
+    font-size: 30px;
+    color: #007135;
+    display: flex;
+    font-weight: 800;
+    font-style: normal;   
+}
+.texto-camping p {
+    justify-content: center;
+    display: flex;
+    font-weight: 400;
+}
+
+.container-camping {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-items: end;
+    color: #007135;
+    padding-left: 8%;
+    padding-top: 5%;
+    padding-right: 8%;
+}
+
+
+.image-campings img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+
+
+
+.container-camping2 {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-items: end;
+    color: #007135;
+    gap: 30%;
+    padding-left: 8%;
+    padding-top: 3%;
+    padding-right: 2%;
+}
+
+.image-campings img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+} 
+
+.image-campings {
+    position: relative; 
+    display: inline-block; 
+    margin: 10px;
+  }
+  
+  .descricao-camping {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+  }
+  
+  .image-campings:hover .descricao-camping {
+    opacity: 1; 
+  }
+  image-campings:hover img {
+    opacity: 2; 
+  }
+  
+  
+  .descricao-camping p {
+    width: 200px;
+    font-size: 14px;
+    line-height: 1.5; 
+    opacity: 0.8;
+  }
+
+
+
 
 footer {
     background-color: #000000d6;  
