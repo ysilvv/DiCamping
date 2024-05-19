@@ -24,11 +24,11 @@
             <div class="box">
                 <h2>FAÇA SEU LOGIN</h2>               
                 
-                <input type="text" id="input_email" placeholder="E-mail">
-                <input type="password" id="input_senha" placeholder="Senha">
+                <input type="text" id="email_input" placeholder="E-mail">
+                <input type="password" id="senha_input" placeholder="Senha">
                 
 
-                <button onclick="VerificacaoLogin()"><b>LOGIN</b></button>
+                <button onclick="entrar()"><b>LOGIN</b></button>
                 <a href="#">
                     <p>Esqueceu a sua senha?</p>
                 </a>
@@ -36,35 +36,81 @@
                 <a href="cadastro.html">
                     <p>Criar uma conta</p>
                 </a>
+
             </div>
         </div>
     </div>
 </body>
+</html>
 <script>
-function VerificacaoLogin(){
-    let email = input_email.value;
-    let senha = input_senha.value;
+function entrar(){
+    let emailVar = email_input.value;
+    let senhaVar = senha_input.value;
+    if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            alert ("Preencha os campos");
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
 
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
 
-    if (email.indexOf("@") <= -1) {
-        alert ("E-mail ou senha incorreto!")
-    }
-    else if (email.indexOf(".com") <= -1) {
-        alert ("E-mail ou senha incorreto!")
-    }
-    else if (senha.length < 8) {
-        alert ("E-mail ou senha incorreto!")
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        alert ("Login realizado com sucesso!")
+                        window.location = "index2.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                alert ("Email e/ou senha inválido(s)")
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+            
+
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
 
-    else if (senha.match(/[A-Z]/g) == null) {
-        alert ("E-mail ou senha incorreto!")
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
-    else {
-    window.location.href = "index2.html"
-    }
-
-}
-
 
 </script>
-</html>
