@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiCamping</title>
+
+    <link rel="icon" href="./img/DICAMPING_LOGOPRETA.png">
+    <link rel="stylesheet" href="./css/form_style.css">
+    <link rel="stylesheet" href="./css/laptop.css" media="(max-width:1024px)">
+    <script src="./js/menuform.js"></script>
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <a href="index2.html">
+              <img id="logo" src="./img/DICAMPING_LOGOPRETA.png" />
+            </a>
+      
+            <ul id="navbar_lista">
+              <li class="navbar-link">
+                <a href="index2.html" class="nav-links">HOME</a>
+              </li>
+              <li class="navbar-link">
+                <a href="index2.html" class="nav-links">DICAS EXTRAS</a>
+              </li>
+              <li class="navbar-link">
+                <a href="index2.html" class="nav-links">INDICAÇÕES DE CAMPING</a>
+              </li>
+              <li class="navbar-link">
+                <a href="index2.html" class="nav-links">PREPARADO?</a>
+              </li>
+              <li class="navbar-link">
+                <a href="formTIPO.html" class="nav-links">CAMPING IDEAL?</a>
+              </li>
+              <li class="navbar-link">
+                <a href="index2.html" class="nav-links">CAMPINGS MAIS INDICADOS</a>
+              </li>
+              <li>
+                <a href="index.html"><button class="button-login">SAIR</button></a>
+              </li>
+            </ul>
+          </nav>
+    </header>
+    <BR>
+        <BR>
+            <BR>
+    <div id="formCamping">
+      <h2>DESCUBRA O CAMPING IDEAL PARA VOCÊ!</h2>
+      <label> 1. Qual é o seu nível de experiência em acampamentos? </label>
+      <select id="experienciac">
+        <option value="A">Avançado</option>
+        <option value="B">Intermediário</option>
+        <option value="C">Iniciante</option>
+      </select>
+
+      <label>
+        Quanta infraestrutura você prefere ter disponível no local?
+      </label>
+      <select id="localizacao">
+        <option value="A">Nenhuma (prefiro a natureza pura)</option>
+        <option value="B">Básica (banheiros, água potável, etc.)</option>
+        <option value="C">
+          Completa (acomodações de luxo, eletricidade, Wi-Fi)
+        </option>
+      </select>
+
+      <label>
+        Qual é a sua preferência em relação ao tipo de acomodação?
+      </label>
+      <select id="alojamento">
+        <option value="A">Barraca simples</option>
+        <option value="B">Barraca equipada com algumas comodidades</option>
+        <option value="C">Cabana ou estrutura permanente luxuosa</option>
+      </select>
+
+      <label> O que você busca na experiência de acampar? </label>
+      <select id="infraestrutura">
+        <option value="A">Conexão profunda com a natureza</option>
+        <option value="B">Conveniência e alguns confortos</option>
+        <option value="C">Luxo e comodidades</option>
+      </select>
+
+      <button onclick="campingFavorito()">Enviar</button>
+
+      <div id="MensagemERRO" style="display: none"></div>
+    </div>
+
+    <div id="div_SELVAGEM" style="display: none">
+      <h2>O camping selvagem é ideal para pessoas como você que busca uma conexão profunda com a
+      natureza, aventura e tranquilidade. </h2>
+      <br><br>
+      
+      <b>Vantagens do Camping Selvagem:</b> Conexão com a Natureza: Vivencie a beleza intocada da natureza sem distrações.
+      <br><br>
+
+      <b>Aventura:</b> Teste suas habilidades de sobrevivência e aproveite a emoção de
+      explorar trilhas desconhecidas. Paz e Tranquilidade: Desfrute da calma e
+      do silêncio longe das multidões e do barulho urbano.
+      <br><br>
+
+      <b>Selvagem:</b> Veja animais e plantas em seus habitats naturais.
+      <br><br>
+
+      <b>Sustentabilidade:</b> Aprenda a acampar de forma sustentável, respeitando o
+      meio ambiente. 
+      <br><br>
+
+      <b>Cabe no bolso:</b> Evite taxas de campings organizados e glamping,
+      gastando menos. O camping selvagem é perfeito para aventureiros que
+      desejam uma experiência autêntica e imersiva na natureza.
+    </div>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    
+
+    <footer>
+      <p> Feito por uma aluna SPTECHER <br>
+          Yasmim 1º ADS - C <br>
+          &copy; 2024
+      </p>
+  </footer>
+  </body>
+</html>
+<script>
+  const listaCondicoes = [
+    { condicao: "A-A-A-A", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-A-B", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-A-C", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-B-A", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-B-B", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-B-C", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-C-A", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-C-B", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-A-C-C", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-B-A-A", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "A-B-A-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-B-A-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-B-B-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-B-B-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-B-B-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-B-C-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-B-C-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-B-C-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-A-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-A-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-A-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-B-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-B-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-B-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-C-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-C-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "A-C-C-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-A-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-A-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-A-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-B-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-B-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-B-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-C-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-C-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-A-C-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-A-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-A-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-A-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-B-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-B-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-B-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-C-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-C-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-B-C-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-A-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-A-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-A-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-B-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-B-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-B-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-C-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-C-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "B-C-C-C", mensagem: "GLAMPING" },
+    { condicao: "C-A-A-A", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "C-A-A-B", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "C-A-A-C", mensagem: "CAMPING SELVAGEM" },
+    { condicao: "C-A-B-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-A-B-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-A-B-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-A-C-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-A-C-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-A-C-C", mensagem: "GLAMPING" },
+    { condicao: "C-B-A-A", mensagem: "CAMPING SELVAGEMO" },
+    { condicao: "C-B-A-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-B-A-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-B-B-A", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-B-B-B", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-B-B-C", mensagem: "CAMPING ORGANIZADO" },
+    { condicao: "C-B-C-A", mensagem: "GLAMPING" },
+    { condicao: "C-B-C-B", mensagem: "GLAMPING" },
+    { condicao: "C-B-C-C", mensagem: "GLAMPING" },
+    { condicao: "C-C-A-A", mensagem: "GLAMPING" },
+    { condicao: "C-C-A-B", mensagem: "GLAMPING" },
+    { condicao: "C-C-A-C", mensagem: "GLAMPING" },
+    { condicao: "C-C-B-A", mensagem: "GLAMPING" },
+    { condicao: "C-C-B-B", mensagem: "GLAMPING" },
+    { condicao: "C-C-B-C", mensagem: "GLAMPING" },
+    { condicao: "C-C-C-A", mensagem: "GLAMPING" },
+    { condicao: "C-C-C-B", mensagem: "GLAMPING" },
+    { condicao: "C-C-C-C", mensagem: "GLAMPING" },
+  ];
+
+  function campingFavorito() {
+    const experiencia = experienciac.value;
+    const preferenciaLocalizacao = localizacao.value;
+    const preferenciaAlojamento = alojamento.value;
+    const infraestruturaCamping = infraestrutura.value;
+
+    const respostaUsuario = `${experiencia}-${preferenciaLocalizacao}-${preferenciaAlojamento}-${infraestruturaCamping}`;
+
+    let tipoCampingAlerta = "";
+    const qtdCondicoes = listaCondicoes.length;
+
+    for (let posicao = 0; posicao < qtdCondicoes; posicao++) {
+      if (listaCondicoes[posicao].condicao === respostaUsuario) {
+        tipoCampingAlerta = listaCondicoes[posicao].mensagem;
+        break; // Parar a busca quando encontrar a condicao
+      }
+    }
+
+    alert("SEU CAMPING IDEAL É: " + tipoCampingAlerta);
+
+    if (tipoCampingAlerta === "CAMPING SELVAGEM") {
+      formCamping.style.display = "none"
+      div_SELVAGEM.style.display = "block";
+    }
+
+    fetch("/camping/cadastrarCamping", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        tipoCampingServer: tipoCampingAlerta,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          const MensagemERRO = document.getElementById("MensagemERRO");
+          MensagemERRO.style.display = "block";
+          MensagemERRO.style.color = "green";
+          MensagemERRO.innerHTML +=
+            "Tipo de Camping cadastrado com sucesso em nossa base de dados, Confira nossa Dashboard!";
+
+          setTimeout(() => {
+            MensagemERRO.style.display = "none";
+          }, 2000);
+        } else {
+          throw "Houve um erro ao tentar cadastrar o tipo de camping!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        const MensagemERRO = document.getElementById("MensagemERRO");
+        MensagemERRO.style.display = "block";
+        MensagemERRO.style.color = "red";
+        MensagemERRO.innerHTML +=
+          "Erro ao cadastrar tipo de camping. Tente novamente.";
+      });
+
+    return false;
+  }
+</script>

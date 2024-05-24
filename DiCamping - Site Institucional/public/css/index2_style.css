@@ -229,7 +229,6 @@ nav.active #navbar_lista .nav-links::before {
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     gap: 100px;
-    padding: 2%;
     height: 50%;
 }
 

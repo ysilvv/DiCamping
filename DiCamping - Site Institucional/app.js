@@ -17,7 +17,7 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-
+var campingRouter = require("./src/routes/camping")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +27,8 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
+app.use("/camping", campingRouter); 
+
 
 
 app.listen(PORTA_APP, function () {

@@ -38,7 +38,7 @@
           <a href="formularioPreparado.html" class="nav-links">PREPARADO?</a>
         </li>
         <li class="navbar-link">
-          <a href="formiuçarioCamping.html" class="nav-links">CAMPING IDEAL?</a>
+          <a href="formTIPO.html" class="nav-links">CAMPING IDEAL?</a>
         </li>
         <li class="navbar-link">
           <a href="#campingIndicado" class="nav-links">CAMPINGS MAIS INDICADOS</a>
@@ -54,7 +54,7 @@
         <p>Sinta a <b>paz e a liberdade</b> do acampamento</p>
         <h1>Bem vindo ao nosso conteudo exclusivo!</h1>
         <div class="botao-header">
-          <a href="#indicacoes"> <button onclick="">INDICAÇÕES</button></a>
+          <button onclick="openModal()">ACESSE NOSSA IA</button>
         </div>
       </div>
       .
@@ -153,17 +153,16 @@
       </div>
 
           <div class="card-container">
-            <!-- Trigger/Open The Modal -->
+
             <div id="cardC1" class="cardC">
-                <img src="nhangussu.jpg" alt="Camping Selvagem">
+                <img src="img/nhangussu.jpg" alt="Camping Selvagem">
                 <h2>PICO DO NHANGUSSU</h2>
             </div>
         
-            <!-- The Modal -->
             <div id="myModal1" class="modalC">
               <div class="modalC-content">
                 <span class="close" data-modal="myModal1">&times;</span>
-                <img src="barrocao.png" alt="Camping Selvagem">
+                <img src="img/barrocao.png" alt="Camping Selvagem">
                 <div class="description">
                     <br>
                     <h2>TIPO DE CAMPING: SELVAGEM</h2>
@@ -172,17 +171,17 @@
               </div>
             </div>
         
-            <!-- Trigger/Open The Modal -->
+
             <div id="cardC2" class="cardC">
-                <img src="sununga.jpg" alt="Camping Selvagem">
+                <img src="img/sununga.jpg" alt="Camping Selvagem">
                 <h2>PRAIA DA SUNUNGA</h2>
             </div>
         
-            <!-- The Modal -->
+
             <div id="myModal2" class="modalC">
               <div class="modalC-content">
                 <span class="close" data-modal="myModal2">&times;</span>
-                <img src="barrocao.png" alt="Camping Selvagem">
+                <img src="img/barrocao.png" alt="Camping Selvagem">
                 <div class="description">
                   <br>
                   <h2>TIPO DE CAMPING: ORGANIZADO</h2>
@@ -191,17 +190,17 @@
               </div>
             </div>
         
-            <!-- Trigger/Open The Modal -->
+
             <div id="cardC3" class="cardC">
-                <img src="barrocao.png" alt="Camping Selvagem">
+                <img src="img/barrocao.png" alt="Camping Selvagem">
                 <h2>CACHOEIRRA DO BARROCÃO </h2>
             </div>
         
-            <!-- The Modal -->
+
             <div id="myModal3" class="modalC">
               <div class="modalC-content">
                 <span class="close" data-modal="myModal3">&times;</span>
-                <img src="barrocao.png" alt="Camping Selvagem">
+                <img src="img/barrocao.png" alt="Camping Selvagem">
                 <div class="description">
                     <br>
                     <h2>TIPO DE CAMPING: SELVAGEM</h2>
@@ -210,17 +209,17 @@
               </div>
             </div>
         
-            <!-- Trigger/Open The Modal -->
+
             <div id="cardC4" class="cardC">
-                <img src="prainhabranca.jpg" alt="Camping Selvagem">
+                <img src="img/prainhabranca.jpg" alt="Camping Selvagem">
                 <h2>PRAINHA BRANCA</h2>
               </div>
         
-            <!-- The Modal -->
+
             <div id="myModal4" class="modalC">
               <div class="modalC-content">
                 <span class="close" data-modal="myModal4">&times;</span>
-                <img src="barrocao.png" alt="Camping Selvagem">
+                <img src="img/barrocao.png" alt="Camping Selvagem">
                 <div class="description">
                     <br>
                     <h2>TIPO DE CAMPING: ORGANIZADO</h2>
@@ -229,17 +228,15 @@
               </div>
             </div>
         
-            <!-- Trigger/Open The Modal -->
             <div id="cardC5" class="cardC">
-                <img src="nazare.png" alt="Camping Selvagem">
+                <img src="img/nazare.png" alt="Camping Selvagem">
                 <h2>NAZARÉ PAULISTA</h2>
             </div>
         
-            <!-- The Modal -->
             <div id="myModal5" class="modalC">
               <div class="modalC-content">
                 <span class="close" data-modal="myModal5">&times;</span>
-                <img src="barrocao.png" alt="Camping Selvagem">
+                <img src="img/barrocao.png" alt="Camping Selvagem">
                 <div class="description">
                     <br>
                     <h2>TIPO DE CAMPING: SELVAGEM </h2>
@@ -248,17 +245,15 @@
               </div>
             </div>
         
-            <!-- Trigger/Open The Modal -->
             <div id="cardC6" class="cardC">
-                <img src="praiaFora.png" alt="Camping Selvagem">
+                <img src="img/praiaFora.png" alt="Camping Selvagem">
                 <h2>PRAIA DO FORA</h2>
             </div>
         
-            <!-- The Modal -->
             <div id="myModal6" class="modalC">
               <div class="modalC-content">
                 <span class="close" data-modal="myModal6">&times;</span>
-                <img src="praiaFora.png" alt="Camping Selvagem">
+                <img src="img/praiaFora.png" alt="Camping Selvagem">
                 <div class="description">
                     <br>
                     <h2>TIPO DE CAMPING: ORGANIZADO</h2>
@@ -300,7 +295,7 @@
   </main>
 
   <!-- HTML para plotar o resultado da chamada da IA -->
-  <div class="circle" onclick="openModal()"><img src="assistente-de-robo.png"></div>
+  <div class="circle" onclick="openModal()"><img src="img/assistente-de-robo.png"></div>
 
   <div id="modal">
     <div id="modal-content">
@@ -371,21 +366,17 @@
 
 <script>
   // Dados dos campings
-  const labels = ['Camping A', 'Camping B', 'Camping C', 'Camping D', 'Camping E'];
-  const data = [12, 19, 3, 5, 2];
+  const labels = ['Camping A', 'Camping B', 'Camping C'];
+  const data = [12, 19, 3];
   const backgroundColors = [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)'
+      'rgba(255, 206, 86, 0.2)'
   ];
   const borderColors = [
       'rgba(255, 99, 132, 1)',
       'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)'
+      'rgba(255, 206, 86, 1)'
   ];
 
   // Gráfico de Barras
