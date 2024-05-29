@@ -14,6 +14,47 @@ async function cadastrarTipoCamping(tipoCampingAlerta) {
     }
 }
 
+function grafico() {
+    var instrucaoSql = `
+    SELECT 'CAMPING SELVAGEM' AS tipo_camping, COUNT(*) AS quantidade
+    FROM campings
+    WHERE tipo_camping = 'CAMPING SELVAGEM'
+    UNION ALL
+    SELECT 'CAMPING ORGANIZADO' AS tipo_camping, COUNT(*) AS quantidade
+    FROM campings
+    WHERE tipo_camping = 'CAMPING ORGANIZADO'
+    UNION ALL
+    SELECT 'GLAMPING' AS tipo_camping, COUNT(*) AS quantidade
+    FROM campings
+    WHERE tipo_camping = 'GLAMPING';
+    `
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
+function buscarMedidasEmTempoReal() {
+    var instrucaoSql = `
+    SELECT 'CAMPING SELVAGEM' AS tipo_camping, COUNT(*) AS quantidade
+    FROM campings
+    WHERE tipo_camping = 'CAMPING SELVAGEM'
+    UNION ALL
+    SELECT 'CAMPING ORGANIZADO' AS tipo_camping, COUNT(*) AS quantidade
+    FROM campings
+    WHERE tipo_camping = 'CAMPING ORGANIZADO'
+    UNION ALL
+    SELECT 'GLAMPING' AS tipo_camping, COUNT(*) AS quantidade
+    FROM campings
+    WHERE tipo_camping = 'GLAMPING';
+    `;
+  
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+  }
+
 module.exports = {
-    cadastrarTipoCamping
+    cadastrarTipoCamping,
+    grafico,
+    buscarMedidasEmTempoReal
 };

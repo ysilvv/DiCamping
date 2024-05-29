@@ -2,203 +2,238 @@
 
 
 
-/* CORPO DO HTML */ 
+/* CORPO DO HTML */
 * {
-    margin: 0;
-    text-decoration: none;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-    scroll-behavior: smooth;
+  margin: 0;
+  text-decoration: none;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  scroll-behavior: smooth;
 }
 
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static.vecteezy.com/ti/fotos-gratis/p2/33367943-uma-pessoa-caminhada-acima-uma-montanha-trilha-as-por-do-sol-gerado-por-ia-gratis-foto.jpg);
+  background-size: cover;
+  /* cobre toda a tela */
+  background-repeat: no-repeat;
+  /* evita repetição da imagem */
+  background-position: center;
+  /* centraliza a imagem */
+}
 
 /* HEADER = CABEÇALHO */
 #home {
-    height: 20vh;
-    position: relative;
+  height: 20vh;
+  position: relative;
+
 }
 
 #fundo_header {
-    background-color: #000000;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
+  background-color: #000000;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 }
 
 .fundo {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+
 }
 
 a .logo {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 
 }
 
 
 nav {
-    position: fixed;
-    top: 0;
-    z-index: 99999;
-    height: 80px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    left: 0;
-    gap: 32px;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  left: 0;
+  gap: 32px;
 }
 
 
 #navbar_lista {
-    font-weight: 600;
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    gap: 32px;
-    flex-grow: 1;
-    align-items: center;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  gap: 32px;
+  flex-grow: 1;
+  align-items: center;
 }
 
 #navbar_lista a {
-    text-decoration: none;
-    color: #000000;
-    transition: 0.5s;
-    position: relative;
-    text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.5s;
+  position: relative;
+  text-transform: uppercase;
 }
 
 #navbar_lista a:hover {
-    color: #00b7ff;
-    transition: transform .2s;
+  color: #00b7ff;
+  transition: transform .2s;
 }
 
 #navbar_lista .nav-links::before {
-    content: '';
-    bottom: -4px;
-    position: absolute;
-    background-color:  #ffffff;
-    border-radius: 4px;
-    width: 100%;
-    transform: scaleX(0);
-    transition: transform .2s;
-    transform-origin: right;
-    height: 2px;
+  content: '';
+  bottom: -4px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 4px;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform .2s;
+  transform-origin: right;
+  height: 2px;
 }
 
 
 #navbar_lista .nav-links:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-    background-color: #00b7ff;
+  transform: scaleX(1);
+  transform-origin: left;
+  background-color: #00b7ff;
 }
 
 
 nav.active {
-    background-color: #ffffff;
-    color: #00b7ff; 
+  background-color: #ffffff;
+  color: #00b7ff;
 }
 
-nav.active #navbar_lista a{
-    color: #000000; 
+nav.active #navbar_lista a {
+  color: #000000;
 }
 
 nav.active #navbar_lista a:hover {
-    color: #006F9B; 
+  color: #006F9B;
 }
 
 nav.active #navbar_lista .nav-links::before {
-    background-color: #006F9B;
+  background-color: #006F9B;
 }
 
 
 .button-login {
-    font-weight: 600;
-    width: 130px;
-    height: 45px;
-    border-radius: 10px;
-    border: 8;
-    transition: 0.3s;
-    color: #4a8298;
-    border-color: #000000;
-    background-color: #ffffff;
+  font-weight: 600;
+  width: 130px;
+  height: 45px;
+  border-radius: 10px;
+  border: 8;
+  transition: 0.3s;
+  color: #4a8298;
+  border-color: #000000;
+  background-color: #ffffff;
 }
 
 .button-login:hover {
-    background-color: #4a8298;
-    color: #ffffff;
+  background-color: #4a8298;
+  color: #ffffff;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  div {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+div {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-  select,
-  input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
-  input {
-    margin-right: 5px;
-    margin-bottom: 10px;
-  }
+input {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
 
-  button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: #4caf50;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #fe8c22;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  button:hover {
-    background-color: #45a049;
-  }
+button:hover {
+  background-color: #ffa646;
+}
 
-  #resultado {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #e9f7ef;
-    border-radius: 4px;
-  }
+#resultado {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e9f7ef;
+  border-radius: 4px;
+}
 
-  
+#div_SELVAGEM {
+  margin-top: -100px;
+}
+
+#div_ORGANIZADO {
+  margin-top: -100px;
+}
+
+#div_GLAMPING {
+  margin-top: -100px;
+}
+
+#div_SELVAGEM img {
+  width: 500px;
+
+}
+
+#div_ORGANIZADO img {
+  width: 500px;
+}
+
+#div_GLAMPING img {
+  width: 500px;
+}
+
 footer {
-background-color: #000000d6;  
-padding: 30px 20px;       
-text-align: center;       
-color: #ffffff;          
+  background-color: #000000d6;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffffff;
 }
