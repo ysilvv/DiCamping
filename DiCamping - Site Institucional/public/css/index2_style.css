@@ -248,6 +248,21 @@ nav.active #navbar_lista .nav-links::before {
     font-size: 15px;
 }
 
+.cardODS {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.cardODS img {
+    width: 300px; 
+    height: 50%;
+    border: #000000;
+    border-radius: 15px;
+}
+
 /* EQUIPAMENTO */
 
 .container-equipamento {
