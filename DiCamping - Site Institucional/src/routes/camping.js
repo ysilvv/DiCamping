@@ -20,4 +20,13 @@ router.get("/tempo-real", function (req, res) {
     campingController.buscarMedidasEmTempoReal(req, res);
 })
 
+
+router.get("/tipoMaisSelecionado", function (req, res) {
+    campingController.tipoMaisSelecionado(req, res);
+})
+
+router.get("/tipoMenosSelecionado", function (req, res) {
+    campingController.tipoMenosSelecionado(req, res);
+})
+
 module.exports = router;

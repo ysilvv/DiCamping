@@ -7,9 +7,9 @@ function cadastrarTipoCamping(req, res) {
         res.status(400).send("O tipo de camping está indefinido!");
     }
 
-    campingModel.cadastrarTipoCamping(tipoCamping).then(function(resposta){
+    campingModel.cadastrarTipoCamping(tipoCamping).then(function (resposta) {
         res.status(200).send("Tipo de camping cadastrado com sucesso");
-    }).catch(function(erro){
+    }).catch(function (erro) {
         res.status(500).json(erro.sqlMessage);
     })
 }
@@ -62,10 +62,36 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
+
+async function tipoMaisSelecionado(req, res) {
+    try {
+        const resultado = await campingModel.tipoMaisSelecionado();
+        res.status(200).json(resultado);
+    } catch (error) {
+        console.error('Erro ao buscar tipo de camping mais selecionado:', error);
+        res.status(500).json({ error: 'Erro ao buscar tipo de camping mais selecionado' });
+    }
+}
+
+
+
+async function tipoMenosSelecionado(req, res) {
+    try {
+        const resultado = await campingModel.tipoMenosSelecionado();
+        res.status(200).json(resultado);
+    } catch (error) {
+        console.error('Erro ao buscar tipo de camping menos selecionado:', error);
+        res.status(500).json({ error: 'Erro ao buscar tipo de camping menos selecionado' });
+    }
+}
+
+
 module.exports = {
     cadastrarTipoCamping,
     grafico,
     buscarMedidasEmTempoReal,
-    buscarTiposCamping
+    buscarTiposCamping,
+    tipoMaisSelecionado,
+    tipoMenosSelecionado
 }
 

@@ -516,6 +516,29 @@ nav.active #navbar_lista .nav-links::before {
     text-align: justify;
 }
 
+.grafico_indicados spam {
+    color: #00b7ff;
+    padding: 2%;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: flex; /* Usa flexbox para alinhar verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+.grafico_indicados p {
+    color: #ff0000;
+    padding: 2%;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: flex; /* Usa flexbox para alinhar verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+
 
 .grafico_indicados button {
     background-color: #ff9d00;

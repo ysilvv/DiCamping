@@ -289,16 +289,17 @@
       <div class="divGrafico">
         <center>
           <h1>TIPOS DE CAMPING'S MAIS INDICADOS</h1>
+            <p id="divMediaAcertos"></p>
         </center>
         <BR><BR>
           <div class="grafico_indicados">
             <div>
              <h2><center> CAMPING MAIS INDICADO: </center></h2>
-             <br><br><br><br>
+             <spam id="campingMaisSelecionado">  </spam>
             </div>
             <div>
             <h2><center> CAMPING MENOS INDICADO: </center></h2>
-            <br><br><br><br>
+            <p id="campingMenosSelecionado">  </p>
             </div>
           </div><br>
         <div class="grafico_indicados">
@@ -306,6 +307,7 @@
             <canvas id="myChartCanvas"></canvas>
           </div>
           <div>
+            <br>
             <h4>O site oferece um formulário interativo para ajudar os usuários a descobrir o camping
               ideal com base em suas preferências. As respostas são usadas para gerar uma dashboard,
               destacando os tipos de campings com mais preferencias pelos úsuarios. Esse gráfico revela tendências e preferências,
@@ -313,7 +315,6 @@
               destinos, mas também promove uma compreensão ampla das preferências dos campistas, e qual o perfil dos úsuarios do site.
               Além disso o formulário por trás desse gráfico, traz informações váliosas para quem tem vontade de acampar, mas não sabe por onde
               começar. </h4>
-              <br>
               <br>
             <button onclick="irParaForm()">DESCUBRA O SEU CAMPING IDEAL!</button><br><br>
           </div>
@@ -389,6 +390,7 @@
 
 
 
+
 <script>
   let proximaAtualizacao;
   window.onload = function () {
@@ -432,8 +434,8 @@
         data: [],
         fill: false,
         backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
+          'rgb(255, 98, 0)',
+          'rgb(0, 55, 94)',
           'rgb(0, 128, 128)'
         ],
         borderColor: 'rgb(75, 192, 192)',
@@ -576,3 +578,55 @@
     document.getElementById("resposta").innerText = data.resultado;
   }
 </script>
+
+<script>
+  async function tipoMaisSelecionado() {
+  try {
+    const response = await fetch('/camping/tipoMaisSelecionado', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+
+    // Verifica se a resposta contém dados válidos
+    if (Array.isArray(data) && data.length > 0 && data[0].tipo_camping) {
+      const tipoCampingMaisSelecionado = data[0].tipo_camping;
+      document.getElementById('campingMaisSelecionado').innerText = tipoCampingMaisSelecionado;
+    } else {
+      throw new Error('Dados inválidos recebidos da API');
+    }
+  } catch (error) {
+    console.error('Erro ao buscar o tipo de camping mais indicado:', error);
+    document.getElementById('campingMaisSelecionado').innerText = 'Erro ao carregar os dados';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', tipoMaisSelecionado);
+
+ </script>
+
+<script>
+  async function tipoMenosSelecionado() {
+  try {
+    const response = await fetch('/camping/tipoMenosSelecionado', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+
+    // Verifica se a resposta contém dados válidos
+    if (Array.isArray(data) && data.length > 0 && data[0].tipo_camping) {
+      const campingMenosSelecionado = data[0].tipo_camping;
+      document.getElementById('campingMenosSelecionado').innerText = campingMenosSelecionado;
+    } else {
+      throw new Error('Dados inválidos recebidos da API');
+    }
+  } catch (error) {
+    console.error('Erro ao buscar o tipo de camping menos indicado:', error);
+    document.getElementById('campingMenosSelecionado').innerText = 'Erro ao carregar os dados';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', tipoMenosSelecionado);
+
+ </script>
