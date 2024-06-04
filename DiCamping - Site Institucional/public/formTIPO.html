@@ -32,13 +32,13 @@
             <a href="index2.html" class="nav-links">INDICAÇÕES DE CAMPING</a>
           </li>
           <li class="navbar-link">
-            <a href="index2.html" class="nav-links">PREPARADO?</a>
-          </li>
-          <li class="navbar-link">
             <a href="formTIPO.html" class="nav-links">CAMPING IDEAL?</a>
           </li>
           <li class="navbar-link">
             <a href="index2.html" class="nav-links">CAMPINGS MAIS INDICADOS</a>
+          </li>
+          <li class="navbar-link">
+            <a href="sobre.html" class="nav-links">SOBRE MIM</a>
           </li>
           <li>
             <a href="index.html"><button class="button-login">SAIR</button></a>
@@ -221,6 +221,7 @@
   </body>
 </html>
 <script>
+ // LISTA DE CONDIÇÕES COM A MENSAGEM
   const listaCondicoes = [
     { condicao: "A-A-A-A", mensagem: "CAMPING SELVAGEM" },
     { condicao: "A-A-A-B", mensagem: "CAMPING SELVAGEM" },
@@ -305,17 +306,21 @@
     { condicao: "C-C-C-C", mensagem: "GLAMPING" },
   ];
 
+
+  // Coleta as escolhas do usuário em relação a experiência, localização, alojamento e infraestrutura do camping.
   function campingFavorito() {
     const experiencia = experienciac.value;
     const preferenciaLocalizacao = localizacao.value;
     const preferenciaAlojamento = alojamento.value;
     const infraestruturaCamping = infraestrutura.value;
 
+    // Combina as respostas em uma string
     const respostaUsuario = `${experiencia}-${preferenciaLocalizacao}-${preferenciaAlojamento}-${infraestruturaCamping}`;
 
     let tipoCampingAlerta = "";
     const qtdCondicoes = listaCondicoes.length;
 
+     // Percorre a lista até encontrar a condição correspondente a resposta do usuario
     for (let posicao = 0; posicao < qtdCondicoes; posicao++) {
       if (listaCondicoes[posicao].condicao === respostaUsuario) {
         tipoCampingAlerta = listaCondicoes[posicao].mensagem;

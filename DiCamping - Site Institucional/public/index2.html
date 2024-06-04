@@ -35,13 +35,13 @@
           <a href="#indicacoes" class="nav-links">INDICAÇÕES DE CAMPING</a>
         </li>
         <li class="navbar-link">
-          <a href="formularioPreparado.html" class="nav-links">PREPARADO?</a>
-        </li>
-        <li class="navbar-link">
           <a href="formTIPO.html" class="nav-links">CAMPING IDEAL?</a>
         </li>
         <li class="navbar-link">
           <a href="#campingIndicado" class="nav-links">CAMPINGS MAIS INDICADOS</a>
+        </li>
+        <li class="navbar-link">
+          <a href="sobre.html" class="nav-links">SOBRE MIM</a>
         </li>
         <li>
           <a href="index.html"><button class="button-login">SAIR</button></a>
@@ -123,12 +123,14 @@
         </div>
         <br><br><br>
         <div class="cardODS">
-          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-15-proteger-a-vida-terrestre" target="_blank">
-          <img src="img/ods3.png">
+          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-15-proteger-a-vida-terrestre"
+            target="_blank">
+            <img src="img/ods3.png">
           </a>
 
-          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-3-saude-de-qualidade#:~:text=O%20ODS%203%20visa%20garantir,crianças%20menores%20de%205%20anos." target="_blank">
-         <img src="img/ods15.jpg">
+          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-3-saude-de-qualidade#:~:text=O%20ODS%203%20visa%20garantir,crianças%20menores%20de%205%20anos."
+            target="_blank">
+            <img src="img/ods15.jpg">
           </a>
         </div>
       </div>
@@ -197,7 +199,7 @@
           <h2>PRAIA DA SUNUNGA</h2>
         </div>
 
-
+        <!-- MOLDAL -->
         <div id="myModal2" class="modalC">
           <div class="modalC-content">
             <span class="close" data-modal="myModal2">&times;</span>
@@ -219,6 +221,7 @@
         </div>
 
 
+        <!-- MOLDAL -->
         <div id="myModal3" class="modalC">
           <div class="modalC-content">
             <span class="close" data-modal="myModal3">&times;</span>
@@ -240,6 +243,7 @@
         </div>
 
 
+        <!-- MOLDAL -->
         <div id="myModal4" class="modalC">
           <div class="modalC-content">
             <span class="close" data-modal="myModal4">&times;</span>
@@ -259,6 +263,8 @@
           <h2>NAZARÉ PAULISTA</h2>
         </div>
 
+
+        <!-- MOLDAL -->
         <div id="myModal5" class="modalC">
           <div class="modalC-content">
             <span class="close" data-modal="myModal5">&times;</span>
@@ -278,6 +284,7 @@
           <h2>PRAIA DO FORA</h2>
         </div>
 
+        <!-- MOLDAL -->
         <div id="myModal6" class="modalC">
           <div class="modalC-content">
             <span class="close" data-modal="myModal6">&times;</span>
@@ -294,23 +301,30 @@
       </div>
     </section>
 
+    <!-- KPIS -->
     <section id="campingIndicado">
       <div class="divGrafico">
         <center>
           <h1>TIPOS DE CAMPING'S MAIS INDICADOS</h1>
-            <p id="divMediaAcertos"></p>
+          <p id="divMediaAcertos"></p>
         </center>
         <BR><BR>
-          <div class="grafico_indicados">
-            <div>
-             <h2><center> CAMPING MAIS INDICADO: </center></h2>
-             <spam id="campingMaisSelecionado">  </spam>
-            </div>
-            <div>
-            <h2><center> CAMPING MENOS INDICADO: </center></h2>
-            <p id="campingMenosSelecionado">  </p>
-            </div>
-          </div><br>
+        <div class="grafico_indicados">
+          <div>
+            <h2>
+              <center> CAMPING MAIS INDICADO: </center>
+            </h2>
+            <spam id="campingMaisSelecionado"> </spam>
+          </div>
+          <div>
+            <h2>
+              <center> CAMPING MENOS INDICADO: </center>
+            </h2>
+            <p id="campingMenosSelecionado"> </p>
+          </div>
+        </div><br>
+
+        <!-- GRAFICO -->
         <div class="grafico_indicados">
           <div>
             <canvas id="myChartCanvas"></canvas>
@@ -319,22 +333,24 @@
             <br>
             <h4>O site oferece um formulário interativo para ajudar os usuários a descobrir o camping
               ideal com base em suas preferências. As respostas são usadas para gerar uma dashboard,
-              destacando os tipos de campings com mais preferencias pelos úsuarios. Esse gráfico revela tendências e preferências,
+              destacando os tipos de campings com mais preferencias pelos úsuarios. Esse gráfico revela tendências e
+              preferências,
               auxiliando os usuários a fazerem escolhas informadas. A ferramenta não apenas ajuda a descobrir novos
-              destinos, mas também promove uma compreensão ampla das preferências dos campistas, e qual o perfil dos úsuarios do site.
-              Além disso o formulário por trás desse gráfico, traz informações váliosas para quem tem vontade de acampar, mas não sabe por onde
+              destinos, mas também promove uma compreensão ampla das preferências dos campistas, e qual o perfil dos
+              úsuarios do site.
+              Além disso o formulário por trás desse gráfico, traz informações váliosas para quem tem vontade de
+              acampar, mas não sabe por onde
               começar. </h4>
-              <br>
+            <br>
             <button onclick="irParaForm()">DESCUBRA O SEU CAMPING IDEAL!</button><br><br>
           </div>
         </div>
       </div>
-     
+
     </section>
   </main>
-  <!-- HTML para plotar o resultado da chamada da IA -->
+  <!-- moldal para aparecer o a ia e o resultado da chamada da IA -->
   <div class="circle" onclick="openModal()"><img src="img/assistente-de-robo.png"></div>
-
   <div id="modal">
     <div id="modal-content">
       <button class="close-button" onclick="closeModal()">X</button>
@@ -361,31 +377,37 @@
 </html>
 
 <script>
+  // MOLDAL DOS CAMPING'S QUE JÁ FUI
+  // Aguarda o carregamento completo do conteúdo da página HTML
   document.addEventListener("DOMContentLoaded", function () {
+    // Seleciona todos os elementos com a classe "modalC" 
     var modals = document.querySelectorAll(".modalC");
+
+    // Seleciona todos os elementos com a classe "cardC" 
     var cards = document.querySelectorAll(".cardC");
+
+    // Seleciona todos os elementos com a classe "close" 
     var spans = document.querySelectorAll(".close");
 
+    // Para cada cartão, adiciona um evento de clique que abre o modal correspondente
     cards.forEach((card, index) => {
       card.addEventListener("click", function () {
+        // Obtém o modal correspondente ao cartão clicado com base no índice (index + 1)
         var modal = document.getElementById("myModal" + (index + 1));
+        // Exibe o modal
         modal.style.display = "block";
       });
     });
 
+    // Para cada botão de fechar, adiciona um evento de clique que fecha o modal
     spans.forEach((span) => {
       span.addEventListener("click", function () {
+        // Obtém o ID do modal a partir do atributo "data-modal" do botão de fechar
         var modalId = span.getAttribute("data-modal");
+        // Seleciona o modal pelo ID
         var modal = document.getElementById(modalId);
+        // Esconde o modal
         modal.style.display = "none";
-      });
-    });
-
-    window.addEventListener("click", function (event) {
-      modals.forEach((modal) => {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
       });
     });
   });
@@ -398,6 +420,105 @@
 </script>
 
 
+
+<script>
+  // MOLDAL DA IA
+    // Função para abrir o modal
+    function openModal() {
+        // Define o estilo display do modal como "block" para exibi-lo
+        document.getElementById("modal").style.display = "block";
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+        // Define o estilo display do modal como "none" para escondê-lo
+        document.getElementById("modal").style.display = "none";
+    }
+
+    // Adiciona um evento de clique à janela
+    window.onclick = function (event) {
+        // Seleciona o modal
+        const modal = document.getElementById("modal");
+        // Verifica se o alvo do clique é o modal (ou seja, um clique fora do conteúdo do modal)
+        if (event.target === modal) {
+            // Fecha o modal
+            closeModal();
+        }
+    };
+</script>
+
+
+<script>
+  // CHAMADA DA I.A
+  async function gerarResposta() {
+    const pergunta = document.getElementById("pergunta").value;
+
+    const response = await fetch("http://localhost:3333/perguntar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ pergunta }),
+    });
+
+    const data = await response.json();
+
+    resposta.style.display = "block";
+    document.getElementById("resposta").innerText = data.resultado;
+  }
+</script>
+
+<script>
+  // KPI DO CAMPING MAIS SELECIONADO
+  async function tipoMaisSelecionado() {
+    try {
+      const response = await fetch('/camping/tipoMaisSelecionado', { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+
+      // Verifica se a resposta contém dados válidos
+      if (Array.isArray(data) && data.length > 0 && data[0].tipo_camping) {
+        const tipoCampingMaisSelecionado = data[0].tipo_camping;
+        document.getElementById('campingMaisSelecionado').innerText = tipoCampingMaisSelecionado;
+      } else {
+        throw new Error('Dados inválidos recebidos da API');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar o tipo de camping mais indicado:', error);
+      document.getElementById('campingMaisSelecionado').innerText = 'Erro ao carregar os dados';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', tipoMaisSelecionado);
+
+</script>
+
+<script>
+    // KPI DO CAMPING MAIS SELECIONADO
+  async function tipoMenosSelecionado() {
+    try {
+      const response = await fetch('/camping/tipoMenosSelecionado', { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+
+      // Verifica se a resposta contém dados válidos
+      if (Array.isArray(data) && data.length > 0 && data[0].tipo_camping) {
+        const campingMenosSelecionado = data[0].tipo_camping;
+        document.getElementById('campingMenosSelecionado').innerText = campingMenosSelecionado;
+      } else {
+        throw new Error('Dados inválidos recebidos da API');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar o tipo de camping menos indicado:', error);
+      document.getElementById('campingMenosSelecionado').innerText = 'Erro ao carregar os dados';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', tipoMenosSelecionado);
+</script>
 
 
 <script>
@@ -512,8 +633,6 @@
           console.log(dados);
 
 
-
-
           if (novoRegistro[0].tipo_camping == dados.labels[dados.labels.length - 1]) {
             console.log("---------------------------------------------------------------")
             console.log("Como não há dados novos para captura, o gráfico não atualizará.")
@@ -551,91 +670,3 @@
 
   }
 </script>
-
-<script>
-  function openModal() {
-    document.getElementById("modal").style.display = "block";
-  }
-
-  function closeModal() {
-    document.getElementById("modal").style.display = "none";
-  }
-
-  window.onclick = function (event) {
-    const modal = document.getElementById("modal");
-    if (event.target === modal) {
-      closeModal();
-    }
-  };
-</script>
-
-<script>
-  async function gerarResposta() {
-    const pergunta = document.getElementById("pergunta").value;
-
-    const response = await fetch("http://localhost:3333/perguntar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ pergunta }),
-    });
-
-    const data = await response.json();
-
-    resposta.style.display = "block";
-    document.getElementById("resposta").innerText = data.resultado;
-  }
-</script>
-
-<script>
-  async function tipoMaisSelecionado() {
-  try {
-    const response = await fetch('/camping/tipoMaisSelecionado', { cache: 'no-store' });
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const data = await response.json();
-
-    // Verifica se a resposta contém dados válidos
-    if (Array.isArray(data) && data.length > 0 && data[0].tipo_camping) {
-      const tipoCampingMaisSelecionado = data[0].tipo_camping;
-      document.getElementById('campingMaisSelecionado').innerText = tipoCampingMaisSelecionado;
-    } else {
-      throw new Error('Dados inválidos recebidos da API');
-    }
-  } catch (error) {
-    console.error('Erro ao buscar o tipo de camping mais indicado:', error);
-    document.getElementById('campingMaisSelecionado').innerText = 'Erro ao carregar os dados';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', tipoMaisSelecionado);
-
- </script>
-
-<script>
-  async function tipoMenosSelecionado() {
-  try {
-    const response = await fetch('/camping/tipoMenosSelecionado', { cache: 'no-store' });
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const data = await response.json();
-
-    // Verifica se a resposta contém dados válidos
-    if (Array.isArray(data) && data.length > 0 && data[0].tipo_camping) {
-      const campingMenosSelecionado = data[0].tipo_camping;
-      document.getElementById('campingMenosSelecionado').innerText = campingMenosSelecionado;
-    } else {
-      throw new Error('Dados inválidos recebidos da API');
-    }
-  } catch (error) {
-    console.error('Erro ao buscar o tipo de camping menos indicado:', error);
-    document.getElementById('campingMenosSelecionado').innerText = 'Erro ao carregar os dados';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', tipoMenosSelecionado);
-
- </script>

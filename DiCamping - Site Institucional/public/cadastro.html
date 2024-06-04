@@ -1,118 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro | DiCamping</title>
-    
+
     <script src="./js/sessao.js"></script>
 
     <!--CSS-->
 
-    <link rel="stylesheet" href="css/styleLOGIN.css">
-    <link rel="stylesheet" href="css/media.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styleLOGIN.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
     <div id="container">
-        <div class="banner">
-            <img src="img/login.png">
-            <div id="MensagemERRO" style="display: none;"></div>
+      <div class="banner">
+        <img src="img/login.png" />
+        <div id="MensagemERRO" style="display: none"></div>
+      </div>
+
+      <div class="box-login">
+        <h1>JUNTE-SE A NÓS!</h1>
+
+        <div class="box">
+          <input type="text" id="nome_input" placeholder="Nome" />
+          <input type="text" id="email_input" placeholder="E-mail" />
+          <input type="password" id="senha_input" placeholder="Senha" />
+          <input
+            type="password"
+            id="confirmacao_senha_input"
+            placeholder="Confirme a senha"
+          />
+
+          <button onclick="cadastrar()"><b>LOGIN</b></button>
+
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif" />
+          </div>
+
+          <a href="login.html">
+            <p>Já tem uma conta</p>
+          </a>
         </div>
-
-        <div class="box-login">
-            <h1>
-               JUNTE-SE A NÓS!
-            </h1>
-
-            <div class="box">             
-    
-                <input type="text" id="nome_input" placeholder="Nome">
-                <input type="text" id="email_input" placeholder="E-mail">
-                <input type="password" id="senha_input" placeholder="Senha">
-                <input type="password" id="confirmacao_senha_input" placeholder="Confirme a senha">
-                
-                <button onclick="cadastrar()"><b>LOGIN</b></button>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif" />
-                  </div>
-          
-              
-                <a href="login.html">
-                    <p>Já tem uma conta</p>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
 
 <script>
   function aguardar() {
-      document.getElementById('div_aguardar').style.display = 'block';
+    document.getElementById("div_aguardar").style.display = "block";
   }
 
   function finalizarAguardar() {
-      document.getElementById('div_aguardar').style.display = 'none';
-  
+    document.getElementById("div_aguardar").style.display = "none";
   }
-  </script>       
+</script>
 <script>
-    
-function cadastrar(){
-  aguardar();
-  
-  var nomeVar = nome_input.value;
+  function cadastrar() {
+    aguardar();
+
+    var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-if (nomeVar.length <= 2) {
-    MensagemERRO.style.display = 'block';
-    MensagemERRO.innerHTML = `Digite um nome válido`
-    finalizarAguardar();
+    if (nomeVar.length <= 2) {
+      MensagemERRO.style.display = "block";
+      MensagemERRO.innerHTML = `Digite um nome válido`;
+      finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
-    
+
     if (emailVar.indexOf("@") <= -1) {
-    MensagemERRO.style.display = 'block';
-    MensagemERRO.innerHTML = `Digite um email válido!`
-    finalizarAguardar();
+      MensagemERRO.style.display = "block";
+      MensagemERRO.innerHTML = `Digite um email válido!`;
+      finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
- if (emailVar.indexOf(".com") <= -1) {
-    MensagemERRO.style.display = 'block';
-    MensagemERRO.innerHTML = `Digite um email válido!`
-    finalizarAguardar();
+    if (emailVar.indexOf(".com") <= -1) {
+      MensagemERRO.style.display = "block";
+      MensagemERRO.innerHTML = `Digite um email válido!`;
+      finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
-    
+
     if (senhaVar.length < 8) {
-    MensagemERRO.style.display = 'block';
-    MensagemERRO.innerHTML = `A senha deve ter pelo menos de 8 caracteres`
-    finalizarAguardar();
+      MensagemERRO.style.display = "block";
+      MensagemERRO.innerHTML = `A senha deve ter pelo menos de 8 caracteres`;
+      finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
-    
+
     if (senhaVar.match(/[A-Z]/g) == null) {
-    MensagemERRO.style.display = 'block';
-    MensagemERRO.innerHTML = `A senha deve conter pelo menos 1 letra maiúscula`
-}
-
-
-else if (confirmacaoSenhaVar != senhaVar) {
-    MensagemERRO.style.display = 'block';
-    MensagemERRO.innerHTML = `Confirmação de senha inválida`
-    finalizarAguardar();
+      MensagemERRO.style.display = "block";
+      MensagemERRO.innerHTML = `A senha deve conter pelo menos 1 letra maiúscula`;
+    } else if (confirmacaoSenhaVar != senhaVar) {
+      MensagemERRO.style.display = "block";
+      MensagemERRO.innerHTML = `Confirmação de senha inválida`;
+      finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
@@ -129,8 +124,8 @@ else if (confirmacaoSenhaVar != senhaVar) {
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        senhaServer: senhaVar
-            }),
+        senhaServer: senhaVar,
+      }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
@@ -140,7 +135,6 @@ else if (confirmacaoSenhaVar != senhaVar) {
 
           MensagemERRO.innerHTML =
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-            
 
           setTimeout(() => {
             window.location = "login.html";
