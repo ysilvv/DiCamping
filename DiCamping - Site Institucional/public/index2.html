@@ -121,14 +121,13 @@
             </div>
           </div>
         </div>
-        <br><br><br>
+        <br><br><br><br>
         <div class="cardODS">
-          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-15-proteger-a-vida-terrestre"
-            target="_blank">
+          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-3-saude-de-qualidade#:~:text=O%20ODS%203%20visa%20garantir,crianças%20menores%20de%205%20anos.
+          " target="_blank">
             <img src="img/ods3.png">
           </a>
-
-          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-3-saude-de-qualidade#:~:text=O%20ODS%203%20visa%20garantir,crianças%20menores%20de%205%20anos."
+          <a href="https://www.iberdrola.com/sustentabilidade/comprometidos-objetivos-desenvolvimento-sustentavel/ods-15-proteger-a-vida-terrestre"
             target="_blank">
             <img src="img/ods15.jpg">
           </a>
@@ -305,7 +304,7 @@
     <section id="campingIndicado">
       <div class="divGrafico">
         <center>
-          <h1>TIPOS DE CAMPING'S MAIS INDICADOS</h1>
+          <h1>TIPOS DE CAMPING'S</h1>
           <p id="divMediaAcertos"></p>
         </center>
         <BR><BR>
@@ -327,6 +326,9 @@
         <!-- GRAFICO -->
         <div class="grafico_indicados">
           <div>
+            <h2>
+              <center> TENDÊNCIA DE CAMPING'S </center>
+            </h2>
             <canvas id="myChartCanvas"></canvas>
           </div>
           <div>
@@ -423,28 +425,28 @@
 
 <script>
   // MOLDAL DA IA
-    // Função para abrir o modal
-    function openModal() {
-        // Define o estilo display do modal como "block" para exibi-lo
-        document.getElementById("modal").style.display = "block";
-    }
+  // Função para abrir o modal
+  function openModal() {
+    // Define o estilo display do modal como "block" para exibi-lo
+    document.getElementById("modal").style.display = "block";
+  }
 
-    // Função para fechar o modal
-    function closeModal() {
-        // Define o estilo display do modal como "none" para escondê-lo
-        document.getElementById("modal").style.display = "none";
-    }
+  // Função para fechar o modal
+  function closeModal() {
+    // Define o estilo display do modal como "none" para escondê-lo
+    document.getElementById("modal").style.display = "none";
+  }
 
-    // Adiciona um evento de clique à janela
-    window.onclick = function (event) {
-        // Seleciona o modal
-        const modal = document.getElementById("modal");
-        // Verifica se o alvo do clique é o modal (ou seja, um clique fora do conteúdo do modal)
-        if (event.target === modal) {
-            // Fecha o modal
-            closeModal();
-        }
-    };
+  // Adiciona um evento de clique à janela
+  window.onclick = function (event) {
+    // Seleciona o modal
+    const modal = document.getElementById("modal");
+    // Verifica se o alvo do clique é o modal (ou seja, um clique fora do conteúdo do modal)
+    if (event.target === modal) {
+      // Fecha o modal
+      closeModal();
+    }
+  };
 </script>
 
 
@@ -496,7 +498,7 @@
 </script>
 
 <script>
-    // KPI DO CAMPING MAIS SELECIONADO
+  // KPI DO CAMPING MAIS SELECIONADO
   async function tipoMenosSelecionado() {
     try {
       const response = await fetch('/camping/tipoMenosSelecionado', { cache: 'no-store' });

@@ -257,7 +257,7 @@ nav.active #navbar_lista .nav-links::before {
 }
 
 .cardODS img {
-    width: 300px; 
+    width: 300px;
     height: 50%;
     border: #000000;
     border-radius: 15px;
@@ -536,10 +536,14 @@ nav.active #navbar_lista .nav-links::before {
     padding: 2%;
     font-weight: 700;
     font-size: 40px;
-    text-align: center; /* Centraliza o texto horizontalmente */
-    display: flex; /* Usa flexbox para alinhar verticalmente */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    display: flex;
+    /* Usa flexbox para alinhar verticalmente */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
 }
 
 .grafico_indicados p {
@@ -547,10 +551,14 @@ nav.active #navbar_lista .nav-links::before {
     padding: 2%;
     font-weight: 700;
     font-size: 40px;
-    text-align: center; /* Centraliza o texto horizontalmente */
-    display: flex; /* Usa flexbox para alinhar verticalmente */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    display: flex;
+    /* Usa flexbox para alinhar verticalmente */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
 }
 
 
